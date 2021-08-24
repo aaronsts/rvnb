@@ -3,22 +3,26 @@ class ListingsController < ApplicationController
   end
 
   def index
+    @listings = Listing.all
     @listings = policy_scope(Listing)
   end
 
   def show
-    authorize @listings
+    @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   def new
-    authorize @listings
+    @listing = Listing.new
+    authorize @listing
   end
 
   def create
-    authorize @listings
+    @listing = Listing.new
+    authorize @listing
   end
 
   def destroy
-    authorize @listings
+    authorize @listing
   end
 end
