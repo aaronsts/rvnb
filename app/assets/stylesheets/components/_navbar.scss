@@ -1,7 +1,7 @@
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: $white;
   height: 50px;
 }
 
@@ -15,15 +15,16 @@
 }
 
 .navbar-btn-flat {
-  color: black;
+  color: $white;
   margin: 4px;
   padding: 4px 16px;
-  border-radius: 4px;
-  background: #DBDBDB;
+  border-radius: 10px;
+  background: $navy;
   font-size: 14px;
   transition: background 0.3s ease;
 }
 
 .navbar-btn-flat:hover {
-  background: rgb(161, 160, 160);
+  color: $white;
+  background: $dark-green;
 }
