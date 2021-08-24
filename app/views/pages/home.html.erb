@@ -1,25 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Login", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "List your RV", "#", class: "btn navbar-btn-flat" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-  </div>
+<%= render 'shared/navbar' %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('banner-pic.jpg')%>)">
   <div class="container">
     <h1>Take an epic journey on nature and share your memories!</h1>
