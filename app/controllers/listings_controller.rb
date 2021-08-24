@@ -18,11 +18,29 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new
+    @listing = Listing.new(listing_params)
+    @listing.user = current_user
     authorize @listing
+    if @listing.save
+      redirect_to listing_path(@listing)
+    else
+      render :new
+    end
   end
 
   def destroy
+    @listing = Listing.find(listing)
+    @listing.destroy
+    redirect_to restaurant_path(@listing.restaurant)
     authorize @listing
+  end
+
+    authorize @listing
+  end
+
+  private
+
+  def listing_params
+    params.require(:listing).permit(:vehicle_name, :description, :location, :capacity, :price)
   end
 end
