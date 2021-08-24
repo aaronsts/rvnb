@@ -1,2 +1,26 @@
-<h1>Listings#show</h1>
-show page
+<div class="container">
+  <div class="main-image"></div>
+    <div class="split-page">
+      <div class="left-column">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h3> Name: <%= @listing.vehicle_name %> </h3>
+            <br>
+            <h3> Location: <%= @listing.location %> </h3>
+            <br>
+            <p> Description: <%= @listing.description %> </p>
+          </li>
+        </ul>
+      </div>
+      <div class="right-column">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h3> Capacity: <%= @listing.capacity %> </h3>
+            <br>
+            <h3> From €<%= @listing.price %> /night </h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <%= link_to "Go back to search", listings_path %>
+</div>

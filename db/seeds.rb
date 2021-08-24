@@ -30,5 +30,7 @@ puts "create listings"
     description: Faker::Lorem.paragraph,
     price: rand(50..100),
     capacity: rand(1..5),
-    user: users.sample)
+    location:Faker::Address.city,
+    user: users.sample
+  )
 end
