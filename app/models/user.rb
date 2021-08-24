@@ -4,4 +4,7 @@ class User < ApplicationRecord
   has_many :listings
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :email, uniqueness: true, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: 'invalid email'}
+  validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only use letters" }
+  validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only use letters" }
 end
