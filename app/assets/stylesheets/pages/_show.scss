@@ -1,0 +1,45 @@
+.container {
+  margin:auto;
+  width: 80vw;
+}
+
+.split-page{
+  display: flex;
+}
+
+.left-column {
+  width: 65%;
+  flex: 1;
+  flex-direction: column;
+  // margin-top: 20px;
+  // font-size: 16px;
+  // font-weight: 400;
+  text-align: left;
+  border: solid;
+  border-style: none;
+  margin-right: 2em;
+}
+
+.right-column {
+  width: 35%;
+  flex-direction: column;
+  // margin-top: 20px;
+  // font-size: 16px;
+  // font-weight: 400;
+  // text-align: right;
+}
+
+.main-image{
+  background-image: url('https://i.picsum.photos/id/1019/670/230.jpg?hmac=ighVo0HgbkE88VVYbtePrCxqd0MzMbO3oh-qwOzptsE');
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
