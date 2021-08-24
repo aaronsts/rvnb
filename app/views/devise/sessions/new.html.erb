@@ -1,6 +1,6 @@
-<div class="container d-flex justify-content-center align-items-center h-100 form-wrapper">
+<div class="d-flex justify-content-center align-items-center h-100 form-wrapper ">
 <div class="row w-100 form-height">
-  <div class="col-6 form-height">
+  <div class="col-6 d-flex flex-column justify-content-center align-items-center">
     <h2>Log in</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -14,15 +14,15 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
+      <div class="form-actions text-center">
         <%= f.button :submit, "Log in", class: 'btn btn-dark rounded-pill' %>
       </div>
     <% end %>
-    <div>
+    <div class='form-links'>
       <%= render "devise/shared/links" %>
     </div>
   </div>
-  <div class="col-6 blue-form form-height">
+  <div class="col-6 blue-form d-flex align-items-center justify-content-center">
     <div>
       <h2>JOIN US NOW!</h2>
       <p>Best commuinty of <strong>RV</strong> owners</p>

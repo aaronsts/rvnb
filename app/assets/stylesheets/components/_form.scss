@@ -1,9 +1,32 @@
 .form-wrapper {
+  width: 80%;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .form-height {
   height: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
+  overflow: hidden;
+
+  div {
+  }
+
+  h2 {
+    font-family: $headers-font;
+    font-weight: 900;
+  }
+}
+
+.form-links {
+  padding: 1em;
+  font-family: $body-font;
+  font-size: 0.8em;
+
+  p {
+    margin: 0;
+  }
 }
 
 .blue-form {
