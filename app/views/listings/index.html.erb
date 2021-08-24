@@ -1,1 +1,8 @@
 <h1>Listings#index</h1>
+<% @listings.each do |listing| %>
+  <p>
+  <%= listing.vehicle_name%>
+  <%= link_to "delete", listing_path(listing), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+  </p>
+<% end %>
+<p><%= link_to "create a new listing", new_listing_path %></p>
