@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Routes for listings controller
-  resources :listings, except: :destroy
+  resources :listings
   # # As a visitor I can visit the home page ----path:/
   # get '', to: 'listings#top'
   # # As a visitor I can view the list of available vehicles ----path:/listings
