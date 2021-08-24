@@ -29,12 +29,9 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(listing)
+    @listing = Listing.find(params[:id])
     @listing.destroy
-    redirect_to restaurant_path(@listing.restaurant)
-    authorize @listing
-  end
-
+    redirect_to listings_path
     authorize @listing
   end
 
