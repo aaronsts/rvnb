@@ -1,19 +1,24 @@
-<%= simple_form_for(@listing) do |f| %>
-  <div class="d-flex justify-content-center ">
-    <div class="form-inputs">
-      <%= f.label :vehicle_name, class: "form-row" %>
-      <%= f.text_field :vehicle_name %>
-      <%= f.label :description, class: "form-row" %>
-      <%= f.text_field :description %>
-      <%= f.label :location, class: "form-row" %>
-      <%= f.text_field :location %>
-      <%= f.label :capacity, class: "form-row" %>
-      <%= f.text_field :capacity %>
-      <%= f.label :price, class: "form-row" %>
-      <%= f.number_field :price %>
-    </div>
-      <div class="form-actions text-center">
-        <%= f.submit %>
+
+<div class="d-flex justify-content-center align-items-center h-100 form-wrapper ">
+  <div class="row form-height">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+      <h2>New listing</h2>
+      <%= simple_form_for(@listing) do |f| %>
+      <div class="row d-flex p-3">
+        <div class="col-6">
+          <%= f.input :vehicle_name %>
+          <%= f.input :description %>
+          <%= f.input :location %>
+        </div>
+        <div class="col-6">
+          <%= f.input :capacity %>
+          <%= f.input :price %>
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Add listing", class: 'btn navbar-btn-flat' %>
+          </div>
+        </div>
       </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
