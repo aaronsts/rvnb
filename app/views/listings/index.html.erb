@@ -1,8 +1,18 @@
-<h1>Listings#index</h1>
-<% @listings.each do |listing| %>
-  <p>
-  <%= listing.vehicle_name%>
-  <%= link_to "delete", listing_path(listing), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-  </p>
-<% end %>
-<p><%= link_to "create a new listing", new_listing_path %></p>
+<div class="wrapper d-flex">
+  <div class="index-left ml-4">
+    <%# <h1 class="text-center">Listings near you!</h1> %>
+    <div class="card-grid">
+      <% @listings.each do |listing| %>
+        <%= link_to listing_path(listing) do %>
+          <%= render "card", listing: listing %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="index-right">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>

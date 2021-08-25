@@ -18,7 +18,7 @@ puts "creating users"
 iliana = User.create!(email: "iliana@gmail.com", password: "123456", first_name: "Iliana", last_name: "Loureiro")
 aaron = User.create!(email: "aaron@gmail.com", password: "123456", first_name: "Aaron", last_name: "Staes")
 mert = User.create!(email: "mert@gmail.com", password: "123456", first_name: "Mert", last_name: "Arslan")
-hamza = User.create!(email: "hamza@gmail.com", password: "123456", first_name: "Hamza", last_name: "El Kholy")
+hamza = User.create!(email: "hamza@gmail.com", password: "123456", first_name: "Hamza", last_name: "ElKholy")
 
 users = [iliana, aaron, mert, hamza]
 
@@ -30,5 +30,7 @@ puts "create listings"
     description: Faker::Lorem.paragraph,
     price: rand(50..100),
     capacity: rand(1..5),
-    user: users.sample)
+    location:Faker::Address.city,
+    user: users.sample
+  )
 end

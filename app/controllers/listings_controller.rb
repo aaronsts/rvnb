@@ -1,12 +1,18 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def top
-  end
-
   def index
     @listings = Listing.all
     @listings = policy_scope(Listing)
+
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { listing: listing }),
+        image_url: helpers.asset_url('RVnB_default.jpg')
+      }
+    end
   end
 
   def show
