@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -15,10 +15,10 @@
     <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
       <%= render 'shared/navbar' %>
     <% end %>
-    <%= yield %>
-    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
-      <%= render 'shared/footer' %>
-    <% end %>
-    <%= render 'shared/flashes' %>
+      <%= yield %>
+      <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+        <%= render 'shared/footer' %>
+      <% end %>
+      <%= render 'shared/flashes' %>
   </body>
 </html>
