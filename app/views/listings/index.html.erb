@@ -1,24 +1,12 @@
 <%= render 'shared/navbar' %>
 <h1 class="text-center">Listings near you!</h1>
-<div class="container">
-  <p><%= link_to "create a new listing", new_listing_path, class: "btn navbar-btn-flat mx-4" %></p>
-</div>
 
 <div class="container card-grid">
-      <% @listings.each do |listing| %>
-      <div class="card-trip m-4">
-        <img src="<%= image_path('RVnB_default.jpg')%>" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= listing.vehicle_name%></h2>
-            <p><%= listing.description%></p>
-            <p><%= link_to "delete", listing_path(listing), method: :delete, data: { confirm: "Are you sure you want to delete?" } %></p>
-          </div>
-          <h2 class="card-trip-pricing">$<%= listing.price%></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
+  <% @listings.each do |listing| %>
+    <%= link_to listing_path(listing) do %>
+      <%= render "card", listing: listing %>
     <% end %>
+  <% end %>
 </div>
     <div id="map"
      style="width: 100%; height: 600px;"
