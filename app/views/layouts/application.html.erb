@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <%= render 'shared/flashes' %>
+    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
+    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= render 'shared/footer' %>
+    <% end %>
+    <%= render 'shared/flashes' %>
   </body>
 </html>
