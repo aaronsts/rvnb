@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+//Cleaning default styling
+.list-group-item{
+  border: none;
+  background-color: transparent;
+}
