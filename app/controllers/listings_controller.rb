@@ -1,9 +1,6 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def top
-  end
-
   def index
     @listings = Listing.all
     @listings = policy_scope(Listing)
