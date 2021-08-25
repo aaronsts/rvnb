@@ -1,14 +1,19 @@
-<h1>Listings#new</h1>
 <%= simple_form_for(@listing) do |f| %>
-  <%= f.label :vehicle_name %>
-  <%= f.text_field :vehicle_name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :capacity %>
-  <%= f.text_field :capacity %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.submit %>
+  <div class="d-flex justify-content-center ">
+    <div class="form-inputs">
+      <%= f.label :vehicle_name, class: "form-row" %>
+      <%= f.text_field :vehicle_name %>
+      <%= f.label :description, class: "form-row" %>
+      <%= f.text_field :description %>
+      <%= f.label :location, class: "form-row" %>
+      <%= f.text_field :location %>
+      <%= f.label :capacity, class: "form-row" %>
+      <%= f.text_field :capacity %>
+      <%= f.label :price, class: "form-row" %>
+      <%= f.number_field :price %>
+    </div>
+      <div class="form-actions text-center">
+        <%= f.submit %>
+      </div>
+  </div>
 <% end %>
