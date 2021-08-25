@@ -1,0 +1,14 @@
+.navbar-btn-flat {
+  color: $white;
+  margin: 4px;
+  padding: 4px 16px;
+  border-radius: 10px;
+  background: $navy;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.navbar-btn-flat:hover {
+  color: $white;
+  background: $dark-green;
+}

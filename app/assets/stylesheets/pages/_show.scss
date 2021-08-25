@@ -1,10 +1,15 @@
 .container {
-  margin:auto;
+  margin: auto;
   width: 80vw;
 }
 
-.split-page{
+.rounded-border {
+  border-radius: 10px;
+}
+
+.split-page {
   display: flex;
+  margin-top: 1em;
 }
 
 .left-column {
@@ -16,8 +21,16 @@
   border-style: solid;
   border-color: #f2f7fbd3;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
 
+  h3 {
+    font-family: $headers-font;
+  }
+}
+
+.carousel-img {
+  width: 80vw;
+  height: 450px;
 }
 
 .right-column {
@@ -28,7 +41,7 @@
   border-style: solid;
   border-color: #f2f7fbd3;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
 }
 
 h3 {
