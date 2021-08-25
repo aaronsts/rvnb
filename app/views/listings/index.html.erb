@@ -1,10 +1,18 @@
-<%= render 'shared/navbar' %>
-<h1 class="text-center">Listings near you!</h1>
-
-<div class="container card-grid">
-  <% @listings.each do |listing| %>
-    <%= link_to listing_path(listing) do %>
-      <%= render "card", listing: listing %>
-    <% end %>
-  <% end %>
+<div class="wrapper d-flex">
+  <div class="index-left ml-4">
+    <%# <h1 class="text-center">Listings near you!</h1> %>
+    <div class="card-grid">
+      <% @listings.each do |listing| %>
+        <%= link_to listing_path(listing) do %>
+          <%= render "card", listing: listing %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="index-right">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
