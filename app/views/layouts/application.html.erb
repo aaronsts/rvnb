@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <%= render 'shared/flashes' %>
+    <% unless controller_name == 'registrations' %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
+    <% unless controller_name == 'registrations' %>
+      <%= render 'shared/footer' %>
+    <% end %>
+    <%= render 'shared/flashes' %>
   </body>
 </html>
