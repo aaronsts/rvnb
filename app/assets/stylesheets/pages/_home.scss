@@ -1,1 +1,58 @@
 // Specific CSS for your home-page
+.card-container {
+  margin: auto;
+  width: 60vw;
+}
+
+.cards-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 0;
+  width: 100%;
+}
+
+.card {
+  margin: 20px auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 50px;
+  height: 40px;
+  color: $navy;
+}
+
+
+.card:hover{
+  transform: scale(0.9, 0.9);
+  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
+}
+
+.popup {
+  display: none;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: $navy;
+}
+
+.card:hover .popup{
+  display: block;
+}
+
+.card-image > img {
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+  object-fit: cover;
+}
