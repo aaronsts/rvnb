@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container wrapper">
 <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,44 +33,56 @@
 
 <div class="split-page">
   <div class="left-column">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <h3> Vehicle: <%= @listing.vehicle_name %> </h3>
-        <br>
-        <h3> Location: <%= @listing.location %> </h3>
-        <br>
-        <p> Description: <%= @listing.description %> </p>
-      </li>
-    </ul>
+    <div class="col-4 p-0">
+      <h3><%= @listing.vehicle_name %></h3>
+      <h3 class="location"><i class="fas fa-map-marker-alt"></i> <%= @listing.location %> </h3>
+    </div>
+    <div class="col-8">
+      <h3>Fits <i class="fas fa-user-friends"></i> <%= @listing.capacity %> </h3>
+      <p><%= @listing.description %></p>
+
+    <div class="booking-view">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">From:</th>
+                  <th scope="col">To:</th>
+                  <th scope="col">Price</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @listing.bookings.each do |booking| %>
+                <% if current_user == booking.user || current_user == booking.listing.user %>
+                  <tr>
+                    <td><%= booking.start_date %></td>
+                    <td><%= booking.start_date %></td>
+                    <td><strong>€<%= booking.total_price %></strong></td>
+                    <td><%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'delete' %></td>
+                  </tr>
+                  </div>
+
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+    </div>
   </div>
   <div class="right-column">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <h3> Capacity: <%= @listing.capacity %> </h3>
-        <br>
-        <h3> From €<%= @listing.price %> / night </h3>
-      </li>
+        <p> From <strong>€<%= @listing.price %></strong> <br>per night <i class="fas fa-moon"></i> </p>
     </ul>
-    <div class="w-50 mx-auto">
+    <div class="booking-form">
       <%= simple_form_for [@listing, @booking] do |f| %>
         <%= f.input :start_date, as: :date, class: 'input-field' %>
         <%= f.input :end_date, as: :date, class: 'input-field' %>
-        <%= f.button :submit, class: 'submit-btn' %>
-      <% end %>
-      <% @listing.bookings.each do |booking| %>
-        <% if current_user == booking.user || current_user == booking.listing.user %>
-          <%= booking.start_date %>
-          <%= booking.end_date %>
-          <%= booking.total_price %>
-          <%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn btn-danger' %>
-
-        <% end %>
+        <%= f.button :submit, class: 'btn-dark' %>
       <% end %>
     </div>
   </div>
 </div>
-<%= link_to "Go back to search", listings_path %>
+<%= link_to "Back", listings_path, class: 'btn-dark' %>
 <br>
 <% if current_user == @listing.user %>
-  <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn btn-danger' %>
+  <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn-delete' %>
 <% end %>

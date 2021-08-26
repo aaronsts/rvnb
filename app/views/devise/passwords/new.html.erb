@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center align-items-center h-100 form-wrapper ">
   <div class="row w-100 form-height">
     <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
-      <h2>Forgot your password?</h2>
+      <h1>Forgot your password?</h1>
 
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="form-actions text-center">
-          <%= f.button :submit, "Reset", class: 'btn btn-dark rounded-pill' %>
+          <%= f.button :submit, "Reset", class: 'btn btn-dark' %>
         </div>
       <% end %>
       <div class="form-links">
