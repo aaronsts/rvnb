@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   # Routes for listings controller
   resources :listings do
-    resources :bookings, except: :index
+    resources :bookings, except: [:index, :destroy]
   end
+  resources :bookings, only: :destroy
   # # As a visitor I can visit the home page ----path:/
   # get '', to: 'listings#top'
   # # As a visitor I can view the list of available vehicles ----path:/listings

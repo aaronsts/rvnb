@@ -32,7 +32,7 @@
   <div class="left-column">
     <ul class="list-group">
       <li class="list-group-item">
-        <h3> Name: <%= @listing.vehicle_name %> </h3>
+        <h3> Vehicle: <%= @listing.vehicle_name %> </h3>
         <br>
         <h3> Location: <%= @listing.location %> </h3>
         <br>
@@ -45,7 +45,7 @@
       <li class="list-group-item">
         <h3> Capacity: <%= @listing.capacity %> </h3>
         <br>
-        <h3> From €<%= @listing.price %> /night </h3>
+        <h3> From €<%= @listing.price %> / night </h3>
       </li>
     </ul>
     <div class="w-50 mx-auto">
@@ -59,6 +59,8 @@
           <%= booking.start_date %>
           <%= booking.end_date %>
           <%= booking.total_price %>
+          <%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn btn-danger' %>
+
         <% end %>
       <% end %>
     </div>
