@@ -5,6 +5,18 @@ class ListingsController < ApplicationController
     @listings = Listing.all
     @listings = policy_scope(Listing)
 
+    if params[:name_query].present?
+      @listings = @listings.search_by_name(params[:name_query])
+    end
+
+    if params[:capacity_query].present?
+      @listings = @listings.search_by_capacity(params[:capacity_query])
+    end
+
+    if params[:price_query].present?
+      @listings = @listings.search_by_price(params[:price_query])
+    end
+
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
