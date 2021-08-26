@@ -1,8 +1,14 @@
-.searchbar {
+.searchbar form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 10px;
+  input {
+    margin-inline: 4px;
+  }
 }
 
-.submit_button {
-
+.search-button {
+  background-color: navy;
+  border: navy;
+  color: white;
 }
