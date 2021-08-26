@@ -13,6 +13,7 @@
         <div class="col-6">
           <%= f.input :capacity %>
           <%= f.input :price %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <div class="form-actions text-center">
             <%= f.button :submit, "Add listing", class: 'btn btn-dark' %>
           </div>

@@ -38,6 +38,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pundit'
+gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -70,3 +71,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
+
+
+# Gem for PG_search
+
+gem 'pg_search'

@@ -9,14 +9,17 @@
   </ol>
   <div class="carousel-inner rounded-border">
     <div class="carousel-item active">
-      <img class="d-block w-100 carousel-img" src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80" alt="First slide">
+      <% if @listing.photos.attached? %>
+      <%= cl_image_tag @listing.photos.last.key, height: 500, crop: :fill, class: "d-block w-100" %>
+      <% end %>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 carousel-img" src="https://images.unsplash.com/photo-1496934373448-f606ecd4ad6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 carousel-img" src="https://i.picsum.photos/id/343/1920/1080.jpg?hmac=ENl4C0Dyd_-O9itbcw3QlisUiGXq5cbE_h5PeCKlbqY" alt="Third slide">
-    </div>
+    <% @listing.photos.each do |photo| %>
+      <div class="carousel-item">
+        <% if photo.attached? %>
+        <%= cl_image_tag photo.key, height: 500, crop: :fill, class: "w-100" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
