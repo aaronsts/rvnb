@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
   end
 
+  def store_return_to
+    session[:return_to] = request.url
+  end
+
+
   private
 
   def skip_pundit?

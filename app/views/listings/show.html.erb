@@ -54,8 +54,12 @@
         <%= f.input :end_date, as: :date, class: 'input-field' %>
         <%= f.button :submit, class: 'submit-btn' %>
       <% end %>
-      <% @listing.booking.each do |booking| %>
-        <%= @listing.booking.price %>
+      <% @listing.bookings.each do |booking| %>
+        <% if current_user == booking.user || current_user == booking.listing.user %>
+          <%= booking.start_date %>
+          <%= booking.end_date %>
+          <%= booking.total_price %>
+        <% end %>
       <% end %>
     </div>
   </div>
