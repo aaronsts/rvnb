@@ -11,4 +11,25 @@ class Listing < ApplicationRecord
   # geocoding
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name,
+    against: [ :vehicle_name, :description ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+    pg_search_scope :search_by_capacity,
+    against: [ :capacity ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+    pg_search_scope :search_by_price,
+    against: [ :price ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end

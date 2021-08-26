@@ -1,20 +1,23 @@
-<h2>All RVs</h2>
+<div class="searchbar">
+  <%= form_tag listings_path, method: :get do %>
+    <%= text_field_tag :name_query,
+      params[:name_query],
+      class: "form-control",
+      placeholder: "Find a ride"
+    %>
 
-<h4>Search by brand</h4>
-  <%= form_tag(rv_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search] %>
-    <%= submit_tag ("Search") %>
-<% end %>
+    <%= text_field_tag :capacity_query,
+      params[:capacity_query],
+      class: "form-control",
+      placeholder: "Find a ride by capacity"
+    %>
 
-<% @rvs.each do |rvs| %>
-  <ul>
-    <li><%= link_to rvs.name, rvs_path(rv) %></li><br>
-  </ul>
-<% end %>
+    <%= text_field_tag :price_query,
+      params[:price_query],
+      class: "form-control",
+      placeholder: "Find a ride by price"
+    %>
 
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <input type="text" placeholder="Search..">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
