@@ -10,8 +10,32 @@ body {
 
 h1 {
   margin: 0;
+  padding: 0.8em 0;
   color: $navy;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-family: $body-font;
+  font-family: $headers-font;
   font-weight: 900;
+}
+
+h2 {
+  margin: 0;
+  color: $navy;
+  font-family: $headers-font;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+h3 {
+  margin: 0;
+  padding-bottom: 0.4em;
+  color: $navy;
+  font-family: $headers-font;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+p {
+  color: $navy;
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 1em;
 }
