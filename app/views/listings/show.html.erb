@@ -9,7 +9,7 @@
   </ol>
   <div class="carousel-inner rounded-border">
     <div class="carousel-item active">
-      <%= cl_image_tag @listing.photos.last.key, crop: :fill, class: "d-block w-100" %>
+      <%= cl_image_tag @listing.photos.last.key, height: 500, crop: :fill, class: "d-block w-100" %>
     </div>
     <% @listing.photos.each do |photo| %>
       <div class="carousel-item">
