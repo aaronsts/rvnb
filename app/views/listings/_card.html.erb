@@ -1,9 +1,9 @@
 <div class="card-trip mt-4 mr-4">
-  <img src="<%= image_path('RVnB_default.jpg')%>" />
+  <img src="<%= image_path("#{rand(1..6)}.jpg")%>" />
   <div class="card-trip-infos">
     <div>
       <h2><%= listing.vehicle_name%></h2>
-      <p><%= listing.description%></p>
+      <p><%= listing.description.truncate(30)%></p>
     </div>
     <h2 class="card-trip-pricing">$<%= listing.price%></h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
