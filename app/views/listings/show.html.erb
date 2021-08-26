@@ -9,11 +9,15 @@
   </ol>
   <div class="carousel-inner rounded-border">
     <div class="carousel-item active">
+      <% if @listing.photos.attached? %>
       <%= cl_image_tag @listing.photos.last.key, height: 500, crop: :fill, class: "d-block w-100" %>
+      <% end %>
     </div>
     <% @listing.photos.each do |photo| %>
       <div class="carousel-item">
+        <% if photo.attached? %>
         <%= cl_image_tag photo.key, height: 500, crop: :fill, class: "w-100" %>
+        <% end %>
       </div>
     <% end %>
   </div>
