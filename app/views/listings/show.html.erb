@@ -48,6 +48,16 @@
         <h3> From €<%= @listing.price %> /night </h3>
       </li>
     </ul>
+    <div class="w-50 mx-auto">
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, class: 'input-field' %>
+        <%= f.input :end_date, as: :date, class: 'input-field' %>
+        <%= f.button :submit, class: 'submit-btn' %>
+      <% end %>
+      <% @listing.booking.each do |booking| %>
+        <%= @listing.booking.price %>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= link_to "Go back to search", listings_path %>
