@@ -8,11 +8,6 @@
   border-radius: 10px;
 }
 
-.split-page {
-  display: flex;
-  margin-top: 1em;
-}
-
 .carousel-img {
   width: 80vw;
   height: 450px;
@@ -20,11 +15,15 @@
   object-position: center;
 }
 
-.left-column {
-  width: 65%;
+.split-page {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
 
-  margin-right: 1em;
+.left-column {
+  display: flex;
+  width: 65%;
   border-radius: 10px;
 }
 
@@ -43,4 +42,11 @@
 .booking-form {
   width: 80%;
   text-align: center;
+}
+
+.booking-details {
+  display: flex;
+  p {
+    padding-right: 1em;
+  }
 }
