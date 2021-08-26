@@ -17,6 +17,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @booking = Booking.new
     authorize @listing
   end
 
@@ -39,6 +40,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
+
     redirect_to listings_path
     authorize @listing
   end
@@ -46,6 +48,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:vehicle_name, :description, :location, :capacity, :price)
+    params.require(:listing).permit(:vehicle_name, :description, :location, :capacity, :price, photos:[])
   end
 end

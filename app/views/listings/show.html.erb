@@ -1,26 +1,72 @@
+
+
 <div class="container">
-  <div class="main-image"></div>
-    <div class="split-page">
-      <div class="left-column">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <h3> Name: <%= @listing.vehicle_name %> </h3>
-            <br>
-            <h3> Location: <%= @listing.location %> </h3>
-            <br>
-            <p> Description: <%= @listing.description %> </p>
-          </li>
-        </ul>
-      </div>
-      <div class="right-column">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <h3> Capacity: <%= @listing.capacity %> </h3>
-            <br>
-            <h3> From €<%= @listing.price %> /night </h3>
-          </li>
-        </ul>
-      </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner rounded-border">
+    <div class="carousel-item active">
+      <%= cl_image_tag @listing.photos.last.key, height: 500, crop: :fill, class: "d-block w-100" %>
     </div>
-    <%= link_to "Go back to search", listings_path %>
+    <% @listing.photos.each do |photo| %>
+      <div class="carousel-item">
+        <%= cl_image_tag photo.key, height: 500, crop: :fill, class: "w-100" %>
+      </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+<div class="split-page">
+  <div class="left-column">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h3> Vehicle: <%= @listing.vehicle_name %> </h3>
+        <br>
+        <h3> Location: <%= @listing.location %> </h3>
+        <br>
+        <p> Description: <%= @listing.description %> </p>
+      </li>
+    </ul>
+  </div>
+  <div class="right-column">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h3> Capacity: <%= @listing.capacity %> </h3>
+        <br>
+        <h3> From €<%= @listing.price %> / night </h3>
+      </li>
+    </ul>
+    <div class="w-50 mx-auto">
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, class: 'input-field' %>
+        <%= f.input :end_date, as: :date, class: 'input-field' %>
+        <%= f.button :submit, class: 'submit-btn' %>
+      <% end %>
+      <% @listing.bookings.each do |booking| %>
+        <% if current_user == booking.user || current_user == booking.listing.user %>
+          <%= booking.start_date %>
+          <%= booking.end_date %>
+          <%= booking.total_price %>
+          <%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn btn-danger' %>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= link_to "Go back to search", listings_path %>
+<br>
+<% if current_user == @listing.user %>
+  <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn btn-danger' %>
+<% end %>
