@@ -20,7 +20,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_owner?
+    user_is_owner? || user == record.listing.user
   end
 
   private

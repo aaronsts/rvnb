@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
   #   @booking = Booking.find()
   # end
 
+  def index
+    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
+  end
+
   def new
     @listing = Listing.find(params[:id])
     @booking = Booking.new
@@ -29,7 +34,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @listing = @booking.listing_id
     @booking.destroy
-    redirect_to listing_path(@listing)
+    redirect_to dashboard_path
     authorize @booking
   end
 
