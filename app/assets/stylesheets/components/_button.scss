@@ -38,3 +38,11 @@
     text-decoration: line-through;
   }
 }
+
+.mapboxgl-popup-close-button {
+  padding: 0.4em 0.6em;
+  margin: 0.6em;
+  font-family: $body-font;
+  border-radius: 10px !important;
+  color: $navy;
+}

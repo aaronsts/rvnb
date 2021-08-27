@@ -1,4 +1,19 @@
 // Specific CSS for your home-page
+.home-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 15px;
+
+  width: 80%;
+
+  h1 {
+    padding: 0;
+    padding-bottom: 1em;
+  }
+}
+
 .card-container {
   margin: auto;
   width: 60vw;
@@ -6,22 +21,26 @@
 
 .cards-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   z-index: 0;
   width: 100%;
+
+  .fa-arrow-right {
+    color: $navy;
+  }
+
+  i {
+    font-size: 40px;
+  }
 }
 
 .description-container {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  h2 {
-    font-size: 25px;
-    color: $navy;
-    font-family: sans-serif;
-  }
-  font-size: 25px;
+  font-size: 20px;
   color: $navy;
   font-family: sans-serif;
 }
@@ -31,18 +50,27 @@
   padding-top: 3.6em;
 
   margin: 20px auto;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 
   border-radius: 10px;
   background-color: $white;
-  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
   transition: 0.4s;
+  border: none;
 
   i {
     padding: 0.2em;
     color: $navy;
+    font-size: 60px;
   }
+
+  h3 {
+    padding: 0.2em;
+    color: $navy;
+    font-size: 20px;
+    text-align: center;
+  }
+
 }
 
 // .card .card_title {
@@ -56,21 +84,18 @@
 //   color: $navy;
 // }
 
-.card:hover {
-  box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
-}
 
-.popup {
-  display: none;
-  font-weight: 300;
-  font-family: sans-serif;
-  color: $navy;
-  p {
-    font-size: 0.6em;
-    opacity: 0.8;
-  }
-}
+// .popup {
+//   display: none;
+//   font-weight: 300;
+//   font-family: sans-serif;
+//   color: $navy;
+//   h3 {
+//     font-size: 0.6em;
+//     opacity: 0.8;
+//   }
+// }
 
-.card:hover .popup {
-  display: block;
-}
+// .card:hover .popup {
+//   display: block;
+// }

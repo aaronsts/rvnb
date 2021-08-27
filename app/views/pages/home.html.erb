@@ -1,39 +1,39 @@
-<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path('banner.jpg')%>)">
-  <div class="container">
-    <h1 id="banner-text">A <strong>home</strong> <br> everywhere you go.</h1>
-  <!--  <div class="wrapper d-flex"> -->
-  <!--    <form novalidate="novalidate" class="simple_form search form-inline" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn-dark">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form> -->
-      <%= render 'shared/searchbar' %>
-  <!--  </div> -->
+<div
+  class="banner d-flex align-items-center justify-content-center"
+  style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(<%=image_path('banner.jpg')%>);
+  "
+>
+  <div class="home-banner">
+    <h1 id="banner-text">
+      A <strong>home</strong> <br />
+      everywhere you go.
+    </h1>
+    <%= render 'shared/searchbar' %>
   </div>
 </div>
 <div class="description-container">
-<h2>Find the best RV that suits your needs, and drive continuously to enjoy your freedom!</h2>
+  <h2>
+    Find the best RV that suits your needs, and drive continuously to enjoy your
+    freedom!
+  </h2>
 </div>
-
 <div class="card-container">
   <div class="cards-list">
     <div class="card">
+      <i class="fas fa-caravan fa-4x card-visual"></i>
       <h3>Find your RV</h3>
-      <i class="fas fa-caravan fa-4x"></i>
-      <p class="popup">Choose your dream RV!</p>
     </div>
+    <i class="fas fa-arrow-right"></i>
     <div class="card">
+      <i class="fas fa-calendar-alt fa-4x card-visual"></i>
       <h3>Choose your dates</h3>
-      <i class="fas fa-calendar-alt fa-4x"></i>
-      <p class="popup">Pick your dates!</p>
     </div>
+    <i class="fas fa-arrow-right"></i>
     <div class="card">
-      <h3>Find your RV</h3>
-      <i class="fas fa-leaf fa-4x"></i>
-      <p class="popup">Enjoy the freedom!</p>
+      <i class="fas fa-leaf fa-4x card-visual"></i>
+      <h3>Explore your new home</h3>
     </div>
   </div>
 </div>

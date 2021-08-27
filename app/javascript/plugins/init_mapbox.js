@@ -16,7 +16,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/streets-v10",
+      style: "mapbox://styles/merarslan/cksu5ldq04sst18quykzftvyp",
     });
 
     map.addControl(
@@ -30,12 +30,20 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '25px';
+      element.style.height = '25px';
 
-      new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup) // add this
-        .addTo(map);
+      let marker_mbg = new mapboxgl.Marker(element).setLngLat([marker.lng, marker.lat]).setPopup(popup).addTo(map);
+      // const color = "#191919";
+      // let markerElement = marker_mbg.getElement();
+      // markerElement
+      //   .querySelectorAll('svg g[fill="' + marker_mbg._color + '"]')[0]
+      //   .setAttribute("fill", color);
+      // marker_mbg._color = color;
     });
 
     fitMapToMarkers(map, markers);
