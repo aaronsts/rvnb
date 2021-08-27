@@ -1,30 +1,25 @@
 <div class="searchbar">
   <%= form_tag listings_path, method: :get do %>
-
     <%= text_field_tag :location_query,
       params[:location_query],
       class: "form-control",
       placeholder: "location"
     %>
-
     <%= text_field_tag :name_query,
       params[:name_query],
       class: "form-control",
       placeholder: "name"
     %>
-
     <%= text_field_tag :capacity_query,
       params[:capacity_query],
       class: "form-control",
       placeholder: "capacity"
     %>
-
     <%#= text_field_tag :price_query,
       params[:price_query],
       class: "form-control",
       placeholder: "price"
     %>
-
-    <%= submit_tag "Search", class: "btn btn-primary search-button" %>
+    <%= submit_tag "Search", class: "btn btn-dark search" %>
   <% end %>
 </div>
