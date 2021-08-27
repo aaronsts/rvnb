@@ -1,18 +1,16 @@
-<div class="d-flex justify-content-center align-items-center h-100 form-wrapper ">
-  <div class="row w-100 form-height">
-    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
-      <h1>Forgot your password?</h1>
-
+<div class="container">
+  <div class="form-height">
+    <div class="form-container">
+      <h1>Forgot your <br>
+        password?</h1>
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
-
         <div class="form-inputs">
           <%= f.input :email,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
         </div>
-
         <div class="form-actions text-center">
           <%= f.button :submit, "Reset", class: 'btn btn-dark' %>
         </div>
@@ -21,10 +19,10 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-    <div class="col-lg-6 blue-form d-flex align-items-center justify-content-center">
+    <div class="form-img">
       <div>
         <h2>JOIN US NOW!</h2>
-        <p>Best commuinty of <strong>RV</strong> owners</p>
+        <p>Best community of <strong>RV</strong> owners</p>
       </div>
     </div>
   </div>
