@@ -70,8 +70,8 @@
   </ul>
   <div class="booking-form">
     <%= simple_form_for [@listing, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, class: 'input-field' %>
-      <%= f.input :end_date, as: :date, class: 'input-field' %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.button :submit, class: 'btn-dark' %>
     <% end %>
   </div>
@@ -82,3 +82,11 @@
 <% if current_user == @listing.user %>
   <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn-delete' %>
 <% end %>
+
+<br>
+<br>
+<div id="map"
+  style="width: 100%; height: 500px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
