@@ -1,9 +1,9 @@
 <div class="card-trip mt-4 mr-4">
-<% if listing.photos.attached? %>
-  <%= cl_image_tag listing.photos.key, height: 300, width: 400, crop: :fill %>
-<% else %>
-  <img src="<%= image_path("#{rand(1..6)}.jpg")%>" />
-<% end %>
+  <% if listing.photos.attached? %>
+    <%= cl_image_tag listing.photos.last.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <img src="<%= image_path("#{rand(1..6)}.jpg")%>" />
+  <% end %>
   <div class="card-trip-infos">
     <div>
       <h2><%= listing.vehicle_name%></h2>
