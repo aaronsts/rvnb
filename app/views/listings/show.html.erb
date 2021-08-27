@@ -15,7 +15,7 @@
     </div>
     <% @listing.photos.each do |photo| %>
       <div class="carousel-item">
-        <% if photo.attached? %>
+        <% if photo %>
         <%= cl_image_tag photo.key, height: 500, crop: :fill, class: "w-100" %>
         <% end %>
       </div>
