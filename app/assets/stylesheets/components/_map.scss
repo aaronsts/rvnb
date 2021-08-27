@@ -21,6 +21,22 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+  border-radius: 10px !important;
+  padding: 1em !important;
+}
+
+.popup-container {
+  p {
+    margin: 0;
+  }
+}
+
+#price {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.index-right {
+  border-left: 3px solid white;
+  // box-shadow: 0px 0px 10px 5px rgba($gray, $alpha: 0.1);
 }
