@@ -18,7 +18,7 @@
           <li class="nav-item">
             <%= link_to dashboard_path do %>
             <img src="https://avatars.dicebear.com/api/human/<%=current_user.first_name%>.svg" class="card-trip-user avatar-bordered" />
-            <%= end %>
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
