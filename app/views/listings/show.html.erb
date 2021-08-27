@@ -82,3 +82,11 @@
 <% if current_user == @listing.user %>
   <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn-delete' %>
 <% end %>
+
+<br>
+<br>
+<div id="map"
+  style="width: 100%; height: 500px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

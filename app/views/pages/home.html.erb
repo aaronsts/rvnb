@@ -37,3 +37,14 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <h2>Some of our RVs</h2>
+  <div class="card-grid">
+    <% @listings.each do |listing| %>
+      <%= link_to listing_path(listing) do %>
+        <%= render "listings/card", listing: listing %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

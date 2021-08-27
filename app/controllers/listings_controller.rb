@@ -30,6 +30,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @booking = Booking.new
+    @markers = [{ lat: @listing.latitude, lng: @listing.longitude, image_url: helpers.asset_url('logo-RVnB.png'), info_window: render_to_string(partial: "info_window", locals: { listing: @listing })}]
     authorize @listing
   end
 
