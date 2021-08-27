@@ -13,22 +13,20 @@
           <br>
           <td><%= link_to "Reject", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'delete' %></td>
         </tr>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <div class="right">
     <h1>Listings</h1>
     <% @listings.each do |listing| %>
       <% if current_user == listing.user%>
-        <tr>
+        <div>
           <td><%= listing.vehicle_name %></td>
           <td><strong>€<%= listing.price %></strong></td>
           <td><%= link_to "Show", listing_path(listing) %></td>
           <td><%= link_to "delete", listing_path(listing), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'delete' %></td>
-        </tr>
-      </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-</div>
+  </div>
 </div>

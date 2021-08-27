@@ -38,18 +38,18 @@
         <h3>Fits <i class="fas fa-user-friends"></i> <%= @listing.capacity %> </h3>
         <p><%= @listing.description %></p>
         <div class="booking-view">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">From:</th>
-                <th scope="col">To:</th>
-                <th scope="col">Price</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @listing.bookings.each do |booking| %>
-                <% if current_user == booking.user || current_user == booking.listing.user %>
+          <% @listing.bookings.each do |booking| %>
+            <% if current_user == booking.user || current_user == booking.listing.user %>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">From:</th>
+                    <th scope="col">To:</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td><%= booking.start_date %></td>
                     <td><%= booking.start_date %></td>
@@ -82,7 +82,6 @@
 <% if current_user == @listing.user %>
   <%= link_to "delete", listing_path, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: 'btn-delete' %>
 <% end %>
-
 <br>
 <br>
 <div id="map"
