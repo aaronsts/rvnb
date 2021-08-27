@@ -4,21 +4,12 @@
 
   height: 70vh;
   width: auto;
-  h1 {
-    margin: 0;
-    color: $white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-family: $headers-font;
-    font-weight: 900;
-  }
-  p {
-    font-size: 20px;
-    color: $white;
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  }
   strong {
     color: $blue;
+  }
+
+  #banner-text {
+    color: $white;
   }
 
   .wrapper {
@@ -33,19 +24,5 @@
     input {
       border-radius: 10px;
     }
-  }
-}
-
-.btn-flat {
-  padding: 8px 24px;
-  margin: 8px 24px;
-  border-radius: 10px;
-  color: $white;
-  background-color: $navy;
-  transition: background 0.3s ease;
-
-  &:hover {
-    color: $white;
-    background-color: $dark-green;
   }
 }

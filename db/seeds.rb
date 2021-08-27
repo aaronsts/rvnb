@@ -27,7 +27,7 @@ puts "create listings"
 20.times do
   Listing.create!(
     vehicle_name: Faker::FunnyName.name,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph(sentence_count: 5),
     price: rand(50..100),
     capacity: rand(1..5),
     location:Faker::Address.city,
