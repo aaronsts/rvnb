@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
         lat: listing.latitude,
         lng: listing.longitude,
         info_window: render_to_string(partial: "info_window", locals: { listing: listing }),
-        image_url: helpers.asset_url('RVnB_default.jpg')
+        image_url: helpers.asset_url('logo-RVnB.png')
       }
     end
   end
