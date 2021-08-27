@@ -53,7 +53,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @listing.destroy
 
-    redirect_to listings_path
+    redirect_to dashboard_path
     authorize @listing
   end
 
